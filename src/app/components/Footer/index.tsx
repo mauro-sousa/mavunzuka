@@ -1,13 +1,13 @@
 const navigation = {
   solutions: [
     {
-      name: "Condomínio Dolce Vita, Via S8, Bloco 2D, R/C, Talatona",
+      name: "Centralidade do Kilamba, Rua Rio Longa, Ed Z2, Aprt33",
       href: "#",
     },
   ],
-  support: [{ name: "+(244) 924 667 014", href: "tel:+(244) 924 667 014" }],
+  support: [{ name: "‪+244 924 072 098‬", href: "tel:‪+244 924 072 098‬" }],
   company: [
-    { name: "geral@florentek.co.ao", href: "mailto:geral@florentek.co.ao" },
+    { name: "geral@mavunzuka.co.ao", href: "mailto:geral@mavunzuka.co.ao" },
   ],
   legal: [{ name: "Terms of service", href: "#" }],
   // social: [
@@ -88,11 +88,11 @@ export default function Footer() {
               className="h-9"
             /> */}
             <p className="text-sm/6 text-balance text-gray-600">
-              FLORENTEK Engineering stands ready to deliver reliable, efficient,
-              and sustainable solutions tailored to the evolving needs of the
-              global energy industry. <br />
-              <span className="">For partnership inquiries, project consultations, or further
-              information regarding our services, contact us.</span>
+              A <span className="text-blue-900 font-bold">MAVUNZUKA & FILHOS LDA</span> acredita que a proximidade com o cliente
+              é um dos pilares para relações duradouras e de confiança. Estamos
+              à sua disposição para atender solicitações, partilhar informações
+              sobre os nossos serviços, estabelecer parcerias estratégicas e
+              responder a quaisquer dúvidas.
             </p>
             {/* <div className="flex gap-x-6">
               {navigation.social.map((item) => (
@@ -107,7 +107,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-3 md:gap-8">
               <div>
                 <h3 className="text-sm/6 font-semibold text-gray-900">
-                  Address
+                  Endereço
                 </h3>
                 <ul role="list" className="mt-1 space-y-4">
                   {navigation.solutions.map((item) => (
@@ -123,7 +123,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-1 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-900">Phone</h3>
+                <h3 className="text-sm/6 font-semibold text-gray-900">Telefone</h3>
                 <ul role="list" className="mt-1 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
@@ -157,8 +157,8 @@ export default function Footer() {
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-sm/6 text-gray-600">
-            &copy; {currentYear} Florentek Engineering, LDA. All rights
-            reserved.
+            &copy; {currentYear} MAVUNZUKA & FILHOS LDA. Todos os direitos
+            reservados.
           </p>
         </div>
       </div>

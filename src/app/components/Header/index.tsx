@@ -20,28 +20,28 @@ import {
   ChevronDownIcon,
   // PhoneIcon,
   // PlayCircleIcon,
-  // RectangleGroupIcon 
+  // RectangleGroupIcon
 } from "@heroicons/react/20/solid";
 
 const products = [
   {
-    title: "Maintenance Services",
-    desc: "Precision calibration & compliance",
+    title: "Segurança Rodoviária",
+    desc: "Soluções integradas para identificação veicular, sinalização e segurança no trânsito.",
     link: "/Services/Maintenance",
   },
   {
-    title: "Specialized Manpower",
-    desc: "Certified technical personnel",
+    title: "Engenharia & Construção Civil",
+    desc: "Execução de obras e gestão técnica de projetos públicos e privados, com foco em qualidade e eficiência.",
     link: "/Services/SpecializedManpower",
   },
   {
-    title: "Engineering & PM",
-    desc: "Expert project delivery",
+    title: "Saúde & Fornecimentos Hospitalares",
+    desc: "Distribuição de equipamentos médicos e hospitalares, com foco em qualidade assistencial e normas internacionais.",
     link: "/Services/ProjectManagement",
   },
   {
-    title: "Operational Asset Management",
-    desc: "Optimize operational efficiency",
+    title: "Comércio & Fornecimento Geral",
+    desc: "Abastecimento estratégico de bens e materiais para obras, indústrias e entidades em todo o território nacional.",
     link: "/Services/OperationalAsset",
   },
 ];
@@ -83,11 +83,11 @@ export default function Header() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image
-              src={"/icon_Primary1.png"}
+              src={"/Primary.svg"}
               height={200}
               width={200}
               alt="Logo Image"
-              className="object-center h-auto w-20"
+              className="object-center h-auto w-13"
             />
           </Link>
         </div>
@@ -100,64 +100,63 @@ export default function Header() {
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
-        </div>        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-10">
-
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12 ml-auto">
-          <Link
-            href="/AboutUs"
-            className="relative text-sm/6 font-semibold text-gray-900 group"
-          >
-            About Us
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
-          </Link>
-          <Popover>
-            <PopoverButton className="relative flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 group outline-none">
-              Services
-              <ChevronDownIcon
-                aria-hidden="true"
-                className="size-5 flex-none text-gray-400"
-              />
-              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
-            </PopoverButton>
-
-            <PopoverPanel
-              transition
-              className="absolute inset-x-0 top-0 -z-10 bg-white pt-8 ring-1 shadow-lg ring-gray-900/5 transition data-closed:-translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+        </div>{" "}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-10">
+          <PopoverGroup className="hidden lg:flex lg:gap-x-12 ml-auto">
+            <Link
+              href="/Empresa"
+              className="relative inline-block text-sm font-semibold text-gray-900 group"
             >
-              <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
-                {products.map((item) => (
-                  <div
-                    key={item.title}
-                    className="group relative rounded-lg p-6 text-sm/6 hover:bg-gray-50"
-                  >
-                    <a
-                      href={item.link}
-                      className="mt-6 block font-semibold text-gray-900 relative group"
+              <span className="relative z-10">Quem Somos</span>
+              <span className="absolute left-0 bottom-0 h-1 w-0 bg-blue-900 transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Popover>
+              <PopoverButton className="relative flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 group outline-none">
+                <span className="relative z-10">Serviços</span>
+                <span className="absolute left-0 bottom-0 h-1 w-0 bg-blue-900 transition-all duration-300 group-hover:w-full" />
+                <ChevronDownIcon
+                  aria-hidden="true"
+                  className="size-5 flex-none text-gray-400"
+                />
+              </PopoverButton>
+
+              <PopoverPanel
+                transition
+                className="absolute inset-x-0 top-0 -z-10 bg-white pt-8 ring-1 shadow-lg ring-gray-900/5 transition data-closed:-translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+              >
+                <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
+                  {products.map((item) => (
+                    <div
+                      key={item.title}
+                      className="group relative rounded-lg p-6 text-sm/6 hover:bg-gray-50"
                     >
-                      {item.title}
-                      <span className="absolute inset-0" />
-                      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
-                    </a>
-                    <p className="mt-1 text-gray-600">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </PopoverPanel>
-          </Popover>
-        </PopoverGroup>
+                      <a
+                        href={item.link}
+                        className="mt-6 block font-semibold text-gray-900 relative group"
+                      >
+                        {item.title}
+                        <span className="absolute inset-0" />
+                        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
+                      </a>
+                      <p className="mt-1 text-gray-600">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </PopoverPanel>
+            </Popover>
+          </PopoverGroup>
           <Link
             href="/Contact"
             className="text-sm/6 font-semibold text-gray-900 relative group"
           >
-            Contact Us
+            <span className="relative z-10">Contate-nos</span>
             <span
               aria-hidden="true"
               className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-2"
             >
               →
             </span>
-            {/* Hover effect: 3 stripes */}
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
+            <span className="absolute left-0 bottom-0 h-1 w-0 bg-blue-900 transition-all duration-300 group-hover:w-full" />
           </Link>
         </div>
       </nav>
@@ -191,7 +190,8 @@ export default function Header() {
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
-                    Services
+                  <span className="relative z-10">Serviços</span>
+                  <span className="absolute left-0 bottom-0 h-1 w-0 bg-blue-900 transition-all duration-300 group-hover:w-full" />
                     <ChevronDownIcon
                       aria-hidden="true"
                       className="size-5 flex-none group-data-open:rotate-180"
@@ -211,27 +211,27 @@ export default function Header() {
                   </DisclosurePanel>
                 </Disclosure>
                 <a
-                  href="/AboutUs"
+                  href="/Empresa"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  About Us
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
+                  <span className="relative z-10">Quem Somos</span>
+                  <span className="absolute left-0 bottom-0 h-1 w-0 bg-blue-900 transition-all duration-300 group-hover:w-full" />
                 </a>
               </div>
               <div className="py-6">
                 <a
                   href="/Contact"
-                  className="text-sm/6 font-semibold text-gray-900 relative group"
+                  className="text-base/6 font-semibold text-gray-900 relative group"
                 >
-                  Contact Us
+                  <span className="relative z-10">Contate-nos</span>
+
                   <span
                     aria-hidden="true"
                     className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-2"
                   >
                     →
                   </span>
-                  {/* Hover effect: 3 stripes */}
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
+                  <span className="absolute left-0 bottom-0 h-1 w-0 bg-blue-900 transition-all duration-300 group-hover:w-full" />
                 </a>
               </div>
             </div>
