@@ -22,6 +22,12 @@
       "namedRegex": "^/(?:/)?$"
     },
     {
+      "page": "/Contacto",
+      "regex": "^/Contacto(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Contacto(?:/)?$"
+    },
+    {
       "page": "/Img_screen",
       "regex": "^/Img_screen(?:/)?$",
       "routeKeys": {},

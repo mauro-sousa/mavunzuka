@@ -1,6 +1,7 @@
 {
-  "/Contacto/page": "app/Contacto/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/Img_screen/page": "app/Img_screen/page.js",
+  "/Contacto/page": "app/Contacto/page.js",
   "/page": "app/page.js"
 }

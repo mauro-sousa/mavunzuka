@@ -2,5 +2,6 @@
   "/favicon.ico/route": "/favicon.ico",
   "/_not-found/page": "/_not-found",
   "/Img_screen/page": "/Img_screen",
+  "/Contacto/page": "/Contacto",
   "/page": "/"
 }

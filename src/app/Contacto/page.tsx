@@ -47,7 +47,7 @@ export default function Contact() {
         "service_00ommps",
         "template_13wgyoc",
         templateParams,
-        "KYRAk-Kw00yYqlNBH"
+        "TMoulio-vOzKirP9h"
       )
       .then(
         function (response) {
@@ -72,7 +72,7 @@ export default function Contact() {
           setIsLoading(false);
           console.log("FAILED...", error);
           toast.error(
-            "Submission failed. Please try again or contact geral@florentek.co.ao",
+            "Submission failed. Please try again or contact geral@mavunzuka.co.ao",
             {
               position: "top-center",
               autoClose: 8000,
