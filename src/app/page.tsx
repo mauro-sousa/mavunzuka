@@ -70,7 +70,7 @@ export default function Home() {
                 {/* CTA */}
                 <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-x-6">
                   <a
-                    href="/contacto"
+                    href="/Contacto"
                     className="inline-flex items-center gap-2 rounded-md bg-blue-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
                   >
                     <PhoneIcon className="h-5 w-5 text-white" />

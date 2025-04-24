@@ -146,7 +146,7 @@ export default function Header() {
             </Popover>
           </PopoverGroup>
           <Link
-            href="/Contact"
+            href="/Contacto"
             className="text-sm/6 font-semibold text-gray-900 relative group"
           >
             <span className="relative z-10">Contate-nos</span>
@@ -220,7 +220,7 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <a
-                  href="/Contact"
+                  href="/Contacto"
                   className="text-base/6 font-semibold text-gray-900 relative group"
                 >
                   <span className="relative z-10">Contate-nos</span>
