@@ -11,7 +11,7 @@ const CTASection = () => {
             <h3 className="text-2xl font-bold text-gray-50 mb-4">
               Pronto para Transformar o Seu Projecto em Realidade?
             </h3>
-            <p className="text-gray-100 mb-6">
+            <p className="text-gray-50 mb-6">
               Nossa equipa de especialistas está pronta para ajudar a
               materializar sua visão.
             </p>

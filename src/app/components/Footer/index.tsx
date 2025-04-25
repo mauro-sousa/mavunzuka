@@ -88,11 +88,15 @@ export default function Footer() {
               className="h-9"
             /> */}
             <p className="text-sm/6 text-balance text-gray-600">
-              A <span className="text-blue-900 font-bold">MAVUNZUKA & FILHOS LDA</span> acredita que a proximidade com o cliente
-              é um dos pilares para relações duradouras e de confiança. Estamos
-              à sua disposição para atender solicitações, partilhar informações
-              sobre os nossos serviços, estabelecer parcerias estratégicas e
-              responder a quaisquer dúvidas.
+              A{" "}
+              <span className="text-blue-900 font-bold">
+                MAVUNZUKA & FILHOS LDA
+              </span>{" "}
+              acredita que a proximidade com o cliente é um dos pilares para
+              relações duradouras e de confiança. Estamos à sua disposição para
+              atender solicitações, partilhar informações sobre os nossos
+              serviços, estabelecer parcerias estratégicas e responder a
+              quaisquer dúvidas.
             </p>
             {/* <div className="flex gap-x-6">
               {navigation.social.map((item) => (
@@ -123,7 +127,9 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-1 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-900">Telefone</h3>
+                <h3 className="text-sm/6 font-semibold text-gray-900">
+                  Telefone
+                </h3>
                 <ul role="list" className="mt-1 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
@@ -156,9 +162,19 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-sm/6 text-gray-600">
+          <p className="text-sm/3 text-gray-600">
             &copy; {currentYear} MAVUNZUKA & FILHOS LDA. Todos os direitos
             reservados.
+          </p>
+          <p className="text-sm/6 text-gray-600">
+            Designed & Developed by{" "}
+            <a
+              href="wwww.autisync.com"
+              target="_blank"
+              className="hover:text-blue-800"
+            >
+              AutiSync
+            </a>
           </p>
         </div>
       </div>

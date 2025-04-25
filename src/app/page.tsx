@@ -8,6 +8,7 @@ import Services from "./components/Services";
 import Intro from "./components/Intro";
 import Testimony from "./components/Testimony";
 import CTA from "./components/CTA";
+import Link from "next/link";
 
 const slides = [
   {
@@ -66,17 +67,17 @@ export default function Home() {
                 <p className="mt-8 text-lg text-gray-600 sm:text-lg/6">
                   {slide.text}
                 </p>
-                
+
                 {/* CTA */}
                 <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-x-6">
-                  <a
+                  <Link
                     href="/Contacto"
                     className="inline-flex items-center gap-2 rounded-md bg-blue-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
                   >
                     <PhoneIcon className="h-5 w-5 text-white" />
                     Fale Connosco
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/servicos"
                     className="group inline-flex items-center text-sm font-semibold text-gray-900 transition hover:text-blue-900"
                   >
@@ -87,7 +88,7 @@ export default function Home() {
                     >
                       →
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -115,8 +116,8 @@ export default function Home() {
       </div>
       <Intro />
       <Services />
-      <Testimony/>
-      <CTA/>
+      <Testimony />
+      <CTA />
     </>
   );
 }
