@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Service from "../components/ServiceContent/Services";
+// import Service from "../components/ServiceContent/Services";
 
 export default function Contact() {
   return (
@@ -43,7 +43,7 @@ export default function Contact() {
         </div>
 
         {/* details section */}
-        <Service />
+        {/* <Service /> */}
       </div>
     </>
   );
