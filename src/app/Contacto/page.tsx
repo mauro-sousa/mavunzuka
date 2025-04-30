@@ -8,11 +8,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ShieldCheckIcon, ServerIcon } from "@heroicons/react/24/outline";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const [isVerified, setVerified] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null); // Store the token
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
   const {
     register,
@@ -29,7 +30,7 @@ export default function Contact() {
       );
       return;
     }
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
 
     const templateParams = {
       fullname: data?.fullname,
@@ -38,7 +39,7 @@ export default function Contact() {
       entity: data?.entity,
       phone: data?.phone,
       purpose: data?.purpose,
-      "g-recaptcha-response": recaptchaToken, // Include reCAPTCHA token
+      "g-recaptcha-response": recaptchaToken,
     };
     console.log(templateParams);
 
@@ -63,7 +64,7 @@ export default function Contact() {
             progress: undefined,
             theme: "colored",
             style: {
-              background: "#16a34a", // green-600
+              background: "#16a34a",
             },
           });
           event.target.reset();
@@ -83,7 +84,7 @@ export default function Contact() {
               progress: undefined,
               theme: "colored",
               style: {
-                background: "#dc2626", // red-600
+                background: "#dc2626",
               },
             }
           );
@@ -96,19 +97,41 @@ export default function Contact() {
   return (
     <>
       <div className="relative py-10">
-        {/* Full-screen image with dark overlay */}
-        <section className="bg-center bg-no-repeat bg-[url('https://images.pexels.com/photos/7964494/pexels-photo-7964494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-gray-700 bg-blend-multiply">
+        {/* Hero Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="bg-center bg-no-repeat bg-[url('https://images.pexels.com/photos/7964494/pexels-photo-7964494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-gray-700 bg-blend-multiply"
+        >
           <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
-              Excelência que Constrói Confiança.
-            </h1>
-            <p className="mb-8 text-lg text-gray-300 sm:px-16 lg:px-48">
+            <motion.h1
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl"
+            >
+              Excelência que<br />Constrói Confiança.
+            </motion.h1>
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="mb-8 text-lg text-gray-300 sm:px-16 lg:px-48"
+            >
               Entre em contacto com a nossa equipa através dos canais abaixo e
               descubra como podemos colaborar para transformar ideias em
               soluções reais.
-            </p>
-            <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-              <a
+            </motion.p>
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+            >
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="cont"
                 className="inline-flex justify-center items-center p-4 text-white rounded-full border border-white hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-400 transition-all duration-300 group"
                 onClick={(e) => {
@@ -120,10 +143,10 @@ export default function Contact() {
                 aria-label="Scroll to contact form"
               >
                 <ArrowDownIcon className="h-6 w-6 transition-all duration-300 group-hover:translate-y-1 animate-bounce outline-0" />
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Contact form and details section */}
         <div className="relative py-10" id="cont">
@@ -132,12 +155,28 @@ export default function Contact() {
           </div>
           <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
             {/* left side */}
-            <div className="bg-gray-900 px-6 py-16 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gray-900 px-6 py-16 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12"
+            >
               <div className="mx-auto max-w-lg">
-                <h2 className="text-2xl font-bold tracking-tight text-gray-50 sm:text-3xl">
+                <motion.h2
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="text-2xl font-bold tracking-tight text-gray-50 sm:text-3xl"
+                >
                   Get in touch
-                </h2>
-                <h3 className="text-gray-50">
+                </motion.h2>
+                <motion.h3
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="text-gray-50"
+                >
                   A{" "}
                   <span className="font-semibold">Mavunzuka & Filhos LDA</span>{" "}
                   acredita que a proximidade com o cliente é um dos pilares para
@@ -146,8 +185,13 @@ export default function Contact() {
                   nossos serviços, estabelecer parcerias estratégicas e
                   responder a quaisquer dúvidas. A sua mensagem é importante
                   para nós.
-                </h3>
-                <dl className="mt-8 text-base text-gray-50">
+                </motion.h3>
+                <motion.dl
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="mt-8 text-base text-gray-50"
+                >
                   <div>
                     <dt className="sr-only">Endereço</dt>
                     <dd>
@@ -177,190 +221,252 @@ export default function Contact() {
                       </a>
                     </dd>
                   </div>
-                </dl>
+                </motion.dl>
               </div>
-            </div>
+            </motion.div>
 
             {/* Contact form */}
-            <div className="bg-white px-6 py-16 lg:col-span-3 lg:px-8 lg:py-24 xl:pl-12 shadow-lg">
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white px-6 py-16 lg:col-span-3 lg:px-8 lg:py-24 xl:pl-12 shadow-lg"
+            >
               <div className="mx-auto max-w-lg lg:max-w-none">
                 <form
                   onSubmit={handleSubmit(onSubmit)}
                   ref={form}
                   className="grid grid-cols-1 gap-y-6"
                 >
-                  {/* Full name */}
-                  <div>
-                    <label htmlFor="full-name" className="sr-only">
-                      Nome
-                    </label>
-                    <input
-                      id="fullname"
-                      type="text"
-                      placeholder="Nome"
-                      autoComplete="name"
-                      {...register("fullname", { required: true })}
-                      className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
-                    />
-                    {errors.fullname && (
-                      <p className="mt-1 text-sm text-red-600">
-                        Por favor digite seu nome
-                      </p>
-                    )}
-                  </div>
+                  {/* Form fields with staggered animations */}
+                  {[
+                    /* Full name */
+                    <motion.div
+                      key="fullname"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <label htmlFor="full-name" className="sr-only">
+                        Nome
+                      </label>
+                      <input
+                        id="fullname"
+                        type="text"
+                        placeholder="Nome"
+                        autoComplete="name"
+                        {...register("fullname", { required: true })}
+                        className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
+                      />
+                      {errors.fullname && (
+                        <motion.p
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="mt-1 text-sm text-red-600"
+                        >
+                          Por favor digite seu nome
+                        </motion.p>
+                      )}
+                    </motion.div>,
 
-                  {/* Entity */}
-                  <div>
-                    <label htmlFor="Entity" className="sr-only">
-                      Organização
-                    </label>
-                    <input
-                      id="Entity"
-                      type="text"
-                      placeholder="Organização"
-                      autoComplete="organization"
-                      {...register("entity", { required: true })}
-                      className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
-                    />
-                    {errors.entity && (
-                      <p className="mt-1 text-sm text-red-600">
-                        Por favor insira sua organização
-                      </p>
-                    )}
-                  </div>
+                    /* Entity */
+                    <motion.div
+                      key="entity"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <label htmlFor="Entity" className="sr-only">
+                        Organização
+                      </label>
+                      <input
+                        id="Entity"
+                        type="text"
+                        placeholder="Organização"
+                        autoComplete="organization"
+                        {...register("entity", { required: true })}
+                        className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
+                      />
+                      {errors.entity && (
+                        <motion.p
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="mt-1 text-sm text-red-600"
+                        >
+                          Por favor insira sua organização
+                        </motion.p>
+                      )}
+                    </motion.div>,
 
-                  {/* Email */}
-                  <div>
-                    <label htmlFor="email" className="sr-only">
-                      E-mail comercial
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      placeholder="E-mail comercial"
-                      autoComplete="email"
-                      {...register("email", { required: true })}
-                      className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
-                    />
-                    {errors.email && (
-                      <p className="mt-1 text-sm text-red-600">
-                        Por favor, insira um endereço de e-mail comercial
-                      </p>
-                    )}
-                  </div>
+                    /* Email */
+                    <motion.div
+                      key="email"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <label htmlFor="email" className="sr-only">
+                        E-mail comercial
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        placeholder="E-mail comercial"
+                        autoComplete="email"
+                        {...register("email", { required: true })}
+                        className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
+                      />
+                      {errors.email && (
+                        <motion.p
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="mt-1 text-sm text-red-600"
+                        >
+                          Por favor, insira um endereço de e-mail comercial
+                        </motion.p>
+                      )}
+                    </motion.div>,
 
-                  {/* Phone */}
-                  <div>
-                    <label htmlFor="phone" className="sr-only">
-                      Telefone
-                    </label>
-                    <input
-                      id="phone"
-                      type="text"
-                      placeholder="Número de telefone válido"
-                      autoComplete="tel"
-                      {...register("phone", { required: true })}
-                      className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
-                    />
-                    {errors.phone && (
-                      <p className="mt-1 text-sm text-red-600">
-                        Por favor insira um número de telefone válido
-                      </p>
-                    )}
-                  </div>
+                    /* Phone */
+                    <motion.div
+                      key="phone"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      <label htmlFor="phone" className="sr-only">
+                        Telefone
+                      </label>
+                      <input
+                        id="phone"
+                        type="text"
+                        placeholder="Número de telefone válido"
+                        autoComplete="tel"
+                        {...register("phone", { required: true })}
+                        className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
+                      />
+                      {errors.phone && (
+                        <motion.p
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="mt-1 text-sm text-red-600"
+                        >
+                          Por favor insira um número de telefone válido
+                        </motion.p>
+                      )}
+                    </motion.div>,
 
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="message" className="sr-only">
-                      Detalhes da consulta
-                    </label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      placeholder="Como podemos o ajudar?"
-                      {...register("message", { required: true })}
-                      className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
-                      defaultValue={""}
-                    />
-                    {errors.message && (
-                      <p className="mt-1 text-sm text-red-600">
-                        Por favor, escreva como podemos o ajudar
-                      </p>
-                    )}
-                  </div>
+                    /* Message */
+                    <motion.div
+                      key="message"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      <label htmlFor="message" className="sr-only">
+                        Detalhes da consulta
+                      </label>
+                      <textarea
+                        id="message"
+                        rows={4}
+                        placeholder="Como podemos o ajudar?"
+                        {...register("message", { required: true })}
+                        className="block w-full rounded-md border border-gray-300 px-4 py-3 placeholder-gray-500 shadow-xs focus:border-blue-900 focus:ring-blue-900"
+                        defaultValue={""}
+                      />
+                      {errors.message && (
+                        <motion.p
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="mt-1 text-sm text-red-600"
+                        >
+                          Por favor, escreva como podemos o ajudar
+                        </motion.p>
+                      )}
+                    </motion.div>,
 
-                  {/* Purpose of Communication */}
-                  <div className="mx-0 mb-1 sm:mb-3">
-                    <label className="block pb-1 text-xs uppercase tracking-wider text-gray-700">
-                      Objetivo da Comunicação *
-                    </label>
-                    <div className="flex flex-wrap gap-4">
-                      {[
-                        {
-                          id: "executive",
-                          value: "Consulta Executiva",
-                          description:
-                            "Discussões estratégicas e consultas de alto nível",
-                        },
-                        {
-                          id: "technical",
-                          value: "Consulta Técnica",
-                          description:
-                            "Especificações de produtos e suporte técnico",
-                        },
-                        {
-                          id: "partnership",
-                          value: "Proposta de Parceria",
-                          description:
-                            "Oportunidades de colaboração empresarial",
-                        },
-                        {
-                          id: "procurement",
-                          value: "Consulta de Aquisições",
-                          description:
-                            "Questões sobre compras e cadeia de suprimentos",
-                        },
-                      ].map((option) => (
-                        <div key={option.id} className="flex items-start">
-                          <input
-                            id={option.id}
-                            type="radio"
-                            value={option.value}
-                            {...register("purpose", { required: true })}
-                            className="h-4 w-4 mt-1 cursor-pointer text-green-600 focus:ring-blue-900"
-                          />
-                          <label
-                            htmlFor={option.id}
-                            className="ml-2 text-sm text-gray-700"
+                    /* Purpose of Communication */
+                    <motion.div
+                      key="purpose"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.6 }}
+                      className="mx-0 mb-1 sm:mb-3"
+                    >
+                      <label className="block pb-1 text-xs uppercase tracking-wider text-gray-700">
+                        Objetivo da Comunicação *
+                      </label>
+                      <div className="flex flex-wrap gap-4">
+                        {[
+                          {
+                            id: "executive",
+                            value: "Consulta Executiva",
+                          },
+                          {
+                            id: "technical",
+                            value: "Consulta Técnica",
+                          },
+                          {
+                            id: "partnership",
+                            value: "Proposta de Parceria",
+                          },
+                          {
+                            id: "procurement",
+                            value: "Consulta de Aquisições",
+                          },
+                        ].map((option) => (
+                          <motion.div
+                            key={option.id}
+                            whileHover={{ scale: 1.03 }}
+                            className="flex items-start"
                           >
-                            <span className="font-medium">{option.value}</span>
-                            {/* <p className="text-xs text-gray-500 mt-1">
-                              {option.description}
-                            </p> */}
-                          </label>
-                        </div>
-                      ))}
-                    </div>
-                    {errors.purpose && (
-                      <p className="mt-1 text-sm text-red-600">
-                        Selecione uma finalidade
-                      </p>
-                    )}
-                  </div>
+                            <input
+                              id={option.id}
+                              type="radio"
+                              value={option.value}
+                              {...register("purpose", { required: true })}
+                              className="h-4 w-4 mt-1 cursor-pointer text-green-600 focus:ring-blue-900"
+                            />
+                            <label
+                              htmlFor={option.id}
+                              className="ml-2 text-sm text-gray-700"
+                            >
+                              <span className="font-medium">{option.value}</span>
+                            </label>
+                          </motion.div>
+                        ))}
+                      </div>
+                      {errors.purpose && (
+                        <motion.p
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="mt-1 text-sm text-red-600"
+                        >
+                          Selecione uma finalidade
+                        </motion.p>
+                      )}
+                    </motion.div>,
+                  ]}
 
-                  {/* Button */}
-                  <div>
-                    {/* reCAPTCHA component */}
+                  {/* Submit button */}
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.7 }}
+                  >
                     <ReCAPTCHA
                       sitekey={"6LfSfSIrAAAAAAmFmTd9v2-rSALduGmWCYEUYBsR"}
                       onChange={(value) => {
                         setVerified(true);
-                        setRecaptchaToken(value); // Save the reCAPTCHA token
+                        setRecaptchaToken(value);
                       }}
                       className="py-2"
                       data-size="invisible"
                     />
-                    <button
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                       type="submit"
                       disabled={isLoading}
                       className={`inline-flex justify-center items-center rounded-md border border-transparent px-6 py-2 text-base font-medium text-white shadow-xs focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 focus:outline-none transform transition-all duration-300  active:scale-95 ${
@@ -396,22 +502,26 @@ export default function Contact() {
                       ) : (
                         "Submit Inquiry"
                       )}
-                    </button>
-                    <div className="mt-4 text-xs text-gray-500">
+                    </motion.button>
+                    <motion.div
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.8 }}
+                      className="mt-4 text-xs text-gray-500"
+                    >
                       <p>
                         🔒 Suas informações são mantidas em sigilo e usadas
                         apenas para responder à sua consulta.
                       </p>
-                      {/* Optional: Link to Privacy Policy */}
-                      {/* <p className="mt-1">
-                      Read our{" "}
-                      <Link href="/privacy-policy" className="text-green-600 hover:underline">
-      Privacy Policy
-    </Link>
-                    </p> */}
-                    </div>
-                  </div>
-                  <div className=" flex flex-wrap items-center gap-4 text-xs text-gray-500">
+                    </motion.div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ y: 10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.9 }}
+                    className="flex flex-wrap items-center gap-4 text-xs text-gray-500"
+                  >
                     <div className="flex items-center gap-1">
                       <ShieldCheckIcon className="h-4 w-4 text-blue-900" />
                       <span>SSL Encrypted</span>
@@ -420,10 +530,10 @@ export default function Contact() {
                       <ServerIcon className="h-4 w-4 text-blue-900" />
                       <span>AO Data Centers</span>
                     </div>
-                  </div>
+                  </motion.div>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
         <ToastContainer />
