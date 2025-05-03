@@ -124,7 +124,7 @@ const CTASection = () => {
               </motion.p>
               <motion.div variants={itemVariants}>
                 <Link
-                  href="/careers"
+                  href="mailto:geral@mavunzuka.co.ao"
                   className="inline-flex items-center justify-center px-8 py-2 border-2 border-white text-base font-medium- rounded-lg text-gray-900 bg-white hover:bg-transparent hover:text-white transition-all duration-300 group"
                 >
                   <motion.span

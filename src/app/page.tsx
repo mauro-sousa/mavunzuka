@@ -78,7 +78,7 @@ export default function Home() {
                     Fale Connosco
                   </Link>
                   <Link
-                    href="/servicos"
+                    href="/Servicos"
                     className="group inline-flex items-center text-sm font-semibold text-gray-900 transition hover:text-blue-900"
                   >
                     Conheça os Nossos Serviços

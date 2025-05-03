@@ -1,11 +1,13 @@
 {
-  "/Contacto/page": "app/Contacto/page.js",
-  "/Empresa/page": "app/Empresa/page.js",
-  "/Services/Engenharia/page": "app/Services/Engenharia/page.js",
-  "/Services/FornecimentoGeral/page": "app/Services/FornecimentoGeral/page.js",
-  "/Services/FornecimentoHospitalares/page": "app/Services/FornecimentoHospitalares/page.js",
-  "/Services/SegurancaRodoviaria/page": "app/Services/SegurancaRodoviaria/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/Servicos/Engenharia/page": "app/Servicos/Engenharia/page.js",
+  "/Servicos/FornecimentoHospitalares/page": "app/Servicos/FornecimentoHospitalares/page.js",
+  "/page": "app/page.js",
+  "/Servicos/SegurancaRodoviaria/page": "app/Servicos/SegurancaRodoviaria/page.js",
+  "/Img_screen/page": "app/Img_screen/page.js",
+  "/Servicos/FornecimentoGeral/page": "app/Servicos/FornecimentoGeral/page.js",
+  "/Contacto/page": "app/Contacto/page.js",
+  "/Empresa/page": "app/Empresa/page.js",
+  "/Servicos/page": "app/Servicos/page.js"
 }
