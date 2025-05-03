@@ -27,22 +27,22 @@ const products = [
   {
     title: "Segurança Rodoviária",
     desc: "Soluções integradas para identificação veicular, sinalização e segurança no trânsito.",
-    link: "/Services/SegurancaRodoviaria",
+    link: "/Servicos/SegurancaRodoviaria",
   },
   {
     title: "Engenharia & Construção Civil",
     desc: "Execução de obras e gestão técnica de projetos públicos e privados, com foco em qualidade e eficiência.",
-    link: "/Services/Engenharia",
+    link: "/Servicos/Engenharia",
   },
   {
     title: "Saúde & Fornecimentos Hospitalares",
     desc: "Distribuição de equipamentos médicos e hospitalares, com foco em qualidade assistencial e normas internacionais.",
-    link: "/Services/FornecimentoHospitalares",
+    link: "/Servicos/FornecimentoHospitalares",
   },
   {
     title: "Comércio & Fornecimento Geral",
     desc: "Abastecimento estratégico de bens e materiais para obras, indústrias e entidades em todo o território nacional.",
-    link: "/Services/FornecimentoGeral",
+    link: "/Servicos/FornecimentoGeral",
   },
 ];
 // const callsToAction = [
