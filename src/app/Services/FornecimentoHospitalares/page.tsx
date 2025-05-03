@@ -6,143 +6,307 @@ import {
   BeakerIcon,
   TruckIcon,
   ShieldCheckIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  MapPinIcon,
 } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 const features = [
   {
-    name: "Equipamentos Médicos:",
-    description:
-      "Fornecimento de aparelhos de diagnóstico por imagem, monitorização e terapia intensiva",
+    name: "Equipamentos Médicos",
+    description: "Aparelhos de diagnóstico e terapia com certificação internacional",
     icon: HeartIcon,
   },
   {
-    name: "Mobiliário Hospitalar:",
-    description:
-      "Leitos hospitalares ergonômicos, mesas cirúrgicas e mobiliário especializado",
+    name: "Mobiliário Hospitalar",
+    description: "Leitos ergonômicos e mobiliário clínico de alta qualidade",
     icon: BeakerIcon,
   },
   {
-    name: "Logística Integrada:",
-    description:
-      "Rede de distribuição nacional com controle de temperatura para produtos sensíveis",
-    icon: TruckIcon,
+    name: "Consumíveis Médicos",
+    description: "Produtos esterilizados e descartáveis conforme normas",
+    icon: ShieldCheckIcon,
   },
   {
-    name: "Certificação e Qualidade:",
-    description:
-      "Todos os produtos atendem às normas ANIP e regulamentações internacionais",
-    icon: ShieldCheckIcon,
+    name: "Logística Especializada",
+    description: "Transporte e armazenamento de produtos sensíveis",
+    icon: TruckIcon,
+  },
+];
+
+const CTACards = [
+  {
+    title: "Solicite Catálogo",
+    description: "Receba nosso catálogo completo de fornecimentos hospitalares",
+    icon: EnvelopeIcon,
+    action: "mailto:contacto@mavunzuka.ao",
+    color: "bg-green-600 hover:bg-green-700",
+  },
+  {
+    title: "Fale com Especialista",
+    description: "Tire suas dúvidas com nossa equipe técnica",
+    icon: PhoneIcon,
+    action: "tel:+244924072098",
+    color: "bg-emerald-600 hover:bg-emerald-700",
+  },
+  {
+    title: "Visite Nossa Sede",
+    description: "Centralidade do Kilamba, Rua Rio Longa, Ed Z2, Aprt33",
+    icon: MapPinIcon,
+    action: "https://maps.google.com",
+    color: "bg-lime-600 hover:bg-lime-700",
   },
 ];
 
 export default function SaudeHospitalar() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen w-full overflow-x-hidden">
-      {/* Hero Section */}
-      <div className="relative h-screen w-full flex items-center justify-center">
-        <div className="absolute inset-0 bg-green-800/70 z-10"></div>
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+      <div className="relative h-[60vh] min-h-[400px] w-full flex items-center justify-center">
+        <div className="absolute inset-0 bg-green-900/70 z-10"></div>
         <Image
-          alt="Healthcare"
+          alt="Saúde e Fornecimentos Hospitalares"
           src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white">
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center px-4"
+        >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
             Saúde e Fornecimentos Hospitalares
           </h1>
           <p className="mt-6 text-lg md:text-xl text-white max-w-3xl">
-            Soluções completas para o setor de saúde com equipamentos de qualidade internacional
+            Equipamentos médicos e soluções de saúde com certificações internacionais
           </p>
-        </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-white">
-          <div className="text-sm inline-flex items-center space-x-2">
-            <Link href="/" className="hover:underline">Home</Link>
-            <span>&gt;</span>
-            <Link href="/Servicos" className="hover:underline">Serviços</Link>
-            <span>&gt;</span>
-            <span>Saúde Hospitalar</span>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#servicos"
+              className="px-6 py-3 bg-white text-green-900 font-medium rounded-lg hover:bg-gray-100 transition-all"
+            >
+              Conheça Nossos Produtos
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#contacto"
+              className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-all"
+            >
+              Solicitar Catálogo
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Services Overview */}
-      <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
-            Excelência em Equipamentos Médicos
-          </h2>
-          <p className="mx-auto mt-6 text-lg text-gray-600">
-            Como parceiro estratégico do setor de saúde em Angola, fornecemos equipamentos 
-            hospitalares, mobiliário clínico e consumíveis médicos de alta qualidade, 
-            contribuindo para a melhoria contínua dos serviços de saúde no país.
-          </p>
-        </div>
-      </div>
-
-      {/* Features */}
-      <div className="bg-green-50 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-green-600">Nossos Produtos</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Tecnologia Médica de Ponta
-            </p>
+      <nav className="bg-gray-100 py-3 px-4">
+        <div className="container mx-auto">
+          <div className="text-sm inline-flex items-center space-x-2 text-gray-600">
+            <Link href="/" className="hover:text-green-600">Home</Link>
+            <span>&gt;</span>
+            <Link href="/servicos" className="hover:text-green-600">Serviços</Link>
+            <span>&gt;</span>
+            <span className="text-green-600">Saúde e Fornecimentos Hospitalares</span>
           </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-              {features.map((feature) => (
-                <div key={feature.name} className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-600">
-                      <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+        </div>
+      </nav>
+
+      <div className="flex flex-col lg:flex-row bg-white">
+        <main className="w-full lg:w-2/3 p-8 lg:p-12">
+          <section id="servicos" className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-gray-900 mb-6"
+            >
+              Compromisso com a Saúde de Qualidade
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              viewport={{ once: true }}
+              className="prose max-w-none text-gray-600"
+            >
+              <p>
+                Atuamos no fornecimento de soluções médicas com foco na segurança, inovação e eficiência. 
+                Nossos produtos seguem os mais altos padrões internacionais de qualidade e são adaptados às necessidades do mercado angolano.
+              </p>
+
+              <h3 className="text-xl font-semibold mt-8">Certificações e Garantias</h3>
+              <ul className="list-disc ml-6">
+                <li>Certificação CE</li>
+                <li>Registro no INIS</li>
+                <li>Conformidade com padrões FDA</li>
+                <li>Atendimento às Normas ANIP</li>
+              </ul>
+            </motion.div>
+          </section>
+
+          <section className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-gray-900 mb-8 text-center"
+            >
+              Nossos Produtos Especializados
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            >
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.name}
+                  whileHover={{ y: -5 }}
+                  className="bg-green-50 p-6 rounded-lg border border-green-200"
+                >
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 bg-green-100 p-3 rounded-lg">
+                      <feature.icon className="h-6 w-6 text-green-600" />
                     </div>
-                    {feature.name}
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
-                </div>
+                    <div className="ml-4">
+                      <h3 className="text-lg font-semibold text-gray-900">{feature.name}</h3>
+                      <p className="mt-1 text-gray-600">{feature.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
-            </dl>
-          </div>
-        </div>
-      </div>
+            </motion.div>
+          </section>
 
-      {/* Quality Assurance */}
-      <div className="bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Garantia de Qualidade
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Todos os nossos produtos hospitalares passam por rigorosos controles de qualidade:
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="flex flex-col rounded-2xl bg-gray-50 p-8">
-                <h3 className="text-xl font-semibold text-gray-900">Certificação</h3>
-                <p className="mt-4 text-gray-600">
-                  Produtos com certificados CE, FDA e outras normas internacionais
-                </p>
-              </div>
-              <div className="flex flex-col rounded-2xl bg-gray-50 p-8">
-                <h3 className="text-xl font-semibold text-gray-900">Treinamento</h3>
-                <p className="mt-4 text-gray-600">
-                  Capacitação técnica para equipes médicas e de manutenção
-                </p>
-              </div>
-              <div className="flex flex-col rounded-2xl bg-gray-50 p-8">
-                <h3 className="text-xl font-semibold text-gray-900">Assistência</h3>
-                <p className="mt-4 text-gray-600">
-                  Suporte técnico especializado e manutenção preventiva
-                </p>
+          <section className="mb-16 bg-green-50 p-8 rounded-xl">
+            <div className="max-w-4xl mx-auto text-center">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Sua Saúde, Nosso Compromisso</h3>
+              <p className="text-gray-600 mb-6">
+                Com atuação nacional e parcerias internacionais, oferecemos soluções médicas confiáveis 
+                para hospitais, clínicas e centros de saúde em todo o país.
+              </p>
+              <div className="flex flex-wrap justify-center gap-8 mt-8">
+                <div className="text-center">
+                  <p className="text-4xl font-bold text-green-600">50+</p>
+                  <p className="text-gray-600">Instituições Atendidas</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-4xl font-bold text-green-600">100%</p>
+                  <p className="text-gray-600">Produtos Certificados</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-4xl font-bold text-green-600">24h</p>
+                  <p className="text-gray-600">Atendimento Emergencial</p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </section>
+        </main>
+
+        <aside className="w-full lg:w-1/3 p-8 lg:p-12 bg-gray-50">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 }}
+            viewport={{ once: true }}
+            className="sticky top-8"
+          >
+            <h3 className="text-xl font-semibold text-gray-900 mb-6">Como Podemos Ajudar?</h3>
+
+            <div className="space-y-6">
+              {CTACards.map((card, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.02 }}
+                  className={`${card.color} text-white p-6 rounded-lg shadow-md transition-all`}
+                >
+                  <div className="flex items-start">
+                    <card.icon className="h-6 w-6 text-white mr-3 mt-1" />
+                    <div>
+                      <h4 className="font-bold text-lg">{card.title}</h4>
+                      <p className="mt-1 text-white/90">{card.description}</p>
+                      <a
+                        href={card.action}
+                        className="inline-block mt-3 px-4 py-2 bg-white/20 rounded hover:bg-white/30 transition-colors"
+                      >
+                        Saiba Mais
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-8 bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+              <h4 className="font-semibold text-gray-900 mb-3">Catálogo Digital</h4>
+              <p className="text-gray-600 mb-4">
+                Faça o download do nosso catálogo de equipamentos e suprimentos médicos.
+              </p>
+              <button className="w-full px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition-colors">
+                Download PDF
+              </button>
+            </div>
+          </motion.div>
+        </aside>
       </div>
+
+      <section id="contacto" className="bg-green-900 text-white py-16 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold mb-6"
+          >
+            Pronto para Equipar sua Unidade de Saúde?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-xl mb-8 max-w-3xl mx-auto"
+          >
+            Oferecemos consultoria especializada e soluções personalizadas para cada necessidade médica.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              href="mailto:contacto@mavunzuka.ao"
+              className="px-8 py-4 bg-white text-green-900 font-bold rounded-lg hover:bg-gray-100 transition-all"
+            >
+              Enviar Mensagem
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              href="tel:+244924072098"
+              className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
+            >
+              Ligar Agora
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }

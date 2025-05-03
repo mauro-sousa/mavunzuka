@@ -1,4 +1,5 @@
 {
+  "/Contacto/page": "app/Contacto/page.js",
   "/Empresa/page": "app/Empresa/page.js",
   "/Services/Engenharia/page": "app/Services/Engenharia/page.js",
   "/Services/FornecimentoGeral/page": "app/Services/FornecimentoGeral/page.js",
