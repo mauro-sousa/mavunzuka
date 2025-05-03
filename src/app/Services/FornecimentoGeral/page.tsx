@@ -59,6 +59,30 @@ const CTACards = [
   },
 ];
 
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+
+const buttonVariants = {
+  hover: {
+    scale: 1.05,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+    },
+  },
+  tap: {
+    scale: 0.98,
+  },
+};
+
 export default function ComercioFornecimento() {
   return (
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
@@ -109,11 +133,11 @@ export default function ComercioFornecimento() {
       <nav className="bg-gray-100 py-3 px-4">
         <div className="container mx-auto">
           <div className="text-sm inline-flex items-center space-x-2 text-gray-600">
-            <Link href="/" className="hover:text-yellow-600">Home</Link>
+            <Link href="/" className="hover:text-yellow-700 hover:font-semibold">Home</Link>
             <span>&gt;</span>
-            <Link href="/servicos" className="hover:text-yellow-600">Serviços</Link>
+            <Link href="/servicos" className="hover:text-yellow-700 hover:font-semibold">Serviços</Link>
             <span>&gt;</span>
-            <span className="text-yellow-600">Comércio e Fornecimento Geral</span>
+            <span className="text-yellow-700 font-semibold">Comércio e Fornecimento Geral</span>
           </div>
         </div>
       </nav>
@@ -143,7 +167,7 @@ export default function ComercioFornecimento() {
                 setor empresarial, educação, entre outros. Nossas parcerias garantem entrega rápida, preços competitivos e qualidade assegurada.
               </p>
 
-              <h3 className="text-xl font-semibold mt-8">Segmentos Atendidos</h3>
+              <h3 className="text-xl font-semibold mt-8 text-yellow-900">Segmentos Atendidos</h3>
               <ul className="list-disc ml-6">
                 <li>Empresas públicas e privadas</li>
                 <li>Empreiteiras e construtoras</li>
@@ -179,7 +203,7 @@ export default function ComercioFornecimento() {
                 >
                   <div className="flex items-start">
                     <div className="flex-shrink-0 bg-yellow-100 p-3 rounded-lg">
-                      <feature.icon className="h-6 w-6 text-yellow-600" />
+                      <feature.icon className="h-6 w-6 text-yellow-700" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-semibold text-gray-900">{feature.name}</h3>
@@ -199,15 +223,15 @@ export default function ComercioFornecimento() {
               </p>
               <div className="flex flex-wrap justify-center gap-8 mt-8">
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-yellow-600">300+</p>
+                  <p className="text-4xl font-bold text-yellow-800">300+</p>
                   <p className="text-gray-600">Produtos em Catálogo</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-yellow-600">99%</p>
+                  <p className="text-4xl font-bold text-yellow-800">99%</p>
                   <p className="text-gray-600">Clientes Satisfeitos</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-yellow-600">72h</p>
+                  <p className="text-4xl font-bold text-yellow-800">72h</p>
                   <p className="text-gray-600">Entrega Média</p>
                 </div>
               </div>
@@ -289,20 +313,63 @@ export default function ComercioFornecimento() {
             viewport={{ once: true }}
             className="flex flex-wrap justify-center gap-4"
           >
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="mailto:contacto@mavunzuka.ao"
-              className="px-8 py-4 bg-white text-yellow-900 font-bold rounded-lg hover:bg-gray-100 transition-all"
-            >
-              Enviar Mensagem
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="tel:+244924072098"
-              className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
-            >
-              Ligar Agora
-            </motion.a>
+            <motion.div variants={itemVariants}>
+              <Link
+                href="mailto:contacto@mavunzuka.co.ao"
+                className=" bg-white inline-flex items-center font-bold justify-center px-8 py-2 border-2 border-white text-base rounded-lg text-yellow-800 hover:bg-gray-100 transition-all duration-300 group"
+              >
+                <motion.span
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="flex items-center"
+                >
+                  Enviar Mensagem
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"
+                    />
+                  </svg>
+                </motion.span>
+              </Link>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Link
+                href="tel:+244924072098"
+                className="inline-flex items-center justify-center px-8 py-2 border-2 border-white text-base font-medium rounded-lg text-white bg-transparent hover:bg-white/10 transition-all duration-300 group"
+              >
+                <motion.span
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="flex items-center"
+                >
+                  Ligar Agora
+                  <svg
+                    className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.6a1 1 0 01.95.68l1.4 4.2a1 1 0 01-.26 1.06l-2.2 2.2a16 16 0 006.4 6.4l2.2-2.2a1 1 0 011.06-.26l4.2 1.4a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.82 21 3 14.18 3 6V5z"
+                    />
+                  </svg>
+                </motion.span>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>

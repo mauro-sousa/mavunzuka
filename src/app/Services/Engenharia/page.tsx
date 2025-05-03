@@ -59,6 +59,30 @@ const CTACards = [
   },
 ];
 
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+
+const buttonVariants = {
+  hover: {
+    scale: 1.05,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+    },
+  },
+  tap: {
+    scale: 0.98,
+  },
+};
+
 export default function EngenhariaConstrucao() {
   return (
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
@@ -90,7 +114,7 @@ export default function EngenhariaConstrucao() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#servicos"
-              className="px-6 py-3 bg-white text-blue-900 font-medium rounded-lg hover:bg-gray-100 transition-all"
+              className="px-6 py-3 bg-white text-blue-950 font-medium rounded-lg hover:bg-gray-100 transition-all"
             >
               Conheça Nossos Serviços
             </motion.a>
@@ -109,11 +133,11 @@ export default function EngenhariaConstrucao() {
       <nav className="bg-gray-100 py-3 px-4">
         <div className="container mx-auto">
           <div className="text-sm inline-flex items-center space-x-2 text-gray-600">
-            <Link href="/" className="hover:text-blue-600">Home</Link>
+            <Link href="/" className="hover:text-blue-900 hover:font-semibold">Home</Link>
             <span>&gt;</span>
-            <Link href="/servicos" className="hover:text-blue-600">Serviços</Link>
+            <Link href="/servicos" className="hover:text-blue-900 hover:font-semibold">Serviços</Link>
             <span>&gt;</span>
-            <span className="text-blue-600">Engenharia e Construção Civil</span>
+            <span className="text-blue-900 font-semibold">Engenharia e Construção Civil</span>
           </div>
         </div>
       </nav>
@@ -144,7 +168,7 @@ export default function EngenhariaConstrucao() {
                 Nosso compromisso é garantir qualidade, segurança e cumprimento rigoroso de prazos.
               </p>
 
-              <h3 className="text-xl font-semibold mt-8">Nossos Diferenciais</h3>
+              <h3 className="text-xl font-semibold mt-8 text-blue-900">Nossos Diferenciais</h3>
               <p>
                 Integrando engenharia, fiscalização e gestão técnica, entregamos projetos que 
                 impactam positivamente o ambiente urbano e rural. Trabalhamos com foco na 
@@ -179,7 +203,7 @@ export default function EngenhariaConstrucao() {
                 >
                   <div className="flex items-start">
                     <div className="flex-shrink-0 bg-blue-100 p-3 rounded-lg">
-                      <feature.icon className="h-6 w-6 text-blue-600" />
+                      <feature.icon className="h-6 w-6 text-blue-900" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-semibold text-gray-900">{feature.name}</h3>
@@ -200,15 +224,15 @@ export default function EngenhariaConstrucao() {
               </p>
               <div className="flex flex-wrap justify-center gap-8 mt-8">
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-blue-600">20+</p>
+                  <p className="text-4xl font-bold text-blue-900">20+</p>
                   <p className="text-gray-600">Projetos Finalizados</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-blue-600">100%</p>
+                  <p className="text-4xl font-bold text-blue-900">100%</p>
                   <p className="text-gray-600">Satisfação Garantida</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-blue-600">24h</p>
+                  <p className="text-4xl font-bold text-blue-900">24h</p>
                   <p className="text-gray-600">Suporte Técnico</p>
                 </div>
               </div>
@@ -263,7 +287,7 @@ export default function EngenhariaConstrucao() {
         </aside>
       </div>
 
-      <section id="contato" className="bg-blue-900 text-white py-16 px-4">
+      <section id="contato" className="bg-blue-950 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0 }}
@@ -290,20 +314,63 @@ export default function EngenhariaConstrucao() {
             viewport={{ once: true }}
             className="flex flex-wrap justify-center gap-4"
           >
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="mailto:contacto@mavunzuka.ao"
-              className="px-8 py-4 bg-white text-blue-900 font-bold rounded-lg hover:bg-gray-100 transition-all"
-            >
-              Enviar Mensagem
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="tel:+244924072098"
-              className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
-            >
-              Ligar Agora
-            </motion.a>
+            <motion.div variants={itemVariants}>
+              <Link
+                href="mailto:contacto@mavunzuka.co.ao"
+                className=" bg-white inline-flex items-center font-bold justify-center px-8 py-2 border-2 border-white text-base rounded-lg text-blue-950 hover:bg-gray-100 transition-all duration-300 group"
+              >
+                <motion.span
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="flex items-center"
+                >
+                  Enviar Mensagem
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"
+                    />
+                  </svg>
+                </motion.span>
+              </Link>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Link
+                href="tel:+244924072098"
+                className="inline-flex items-center justify-center px-8 py-2 border-2 border-white text-base font-medium rounded-lg text-white bg-transparent hover:bg-white/10 transition-all duration-300 group"
+              >
+                <motion.span
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="flex items-center"
+                >
+                  Ligar Agora
+                  <svg
+                    className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.6a1 1 0 01.95.68l1.4 4.2a1 1 0 01-.26 1.06l-2.2 2.2a16 16 0 006.4 6.4l2.2-2.2a1 1 0 011.06-.26l4.2 1.4a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.82 21 3 14.18 3 6V5z"
+                    />
+                  </svg>
+                </motion.span>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
