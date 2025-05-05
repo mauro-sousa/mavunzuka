@@ -55,7 +55,7 @@ const CTACards = [
     title: "Visite Nossa Sede",
     description: "Centralidade do Kilamba, Rua Rio Longa, Ed Z2, Aprt33",
     icon: MapPinIcon,
-    action: "https://maps.google.com",
+    action: "https://maps.app.goo.gl/iYYV3cs6mwGuxb9T8",
     color: "bg-lime-600 hover:bg-lime-700",
   },
 ];
