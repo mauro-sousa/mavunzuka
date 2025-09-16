@@ -206,7 +206,7 @@ export default function Contact() {
                         aria-hidden="true"
                         className="size-6 shrink-0 text-gray-50"
                       />
-                      <span className="ml-3">+(244) 924 072 098</span>
+                      <span className="ml-3">‭+244 947-103-249 / +244 947-103-248‬</span>
                     </dd>
                   </div>
                   <div className="mt-3">
