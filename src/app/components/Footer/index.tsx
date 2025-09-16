@@ -5,8 +5,7 @@ const navigation = {
       href: "#",
     },
   ],
-  support: [{ name: "‪‭+244 947 103 249‬", href: "tel:‭+244 947 103 249" }],
-  [{ name: "‪‭+244 947 103 248‬‬", href: "tel:‭+244 947 103 248‬" }],
+  support: [{ name: "‪‭+244 947 103 249‬", href: "tel:‭+244 947 103 249" }, { name: "‪‭+244 947 103 248‬‬", href: "tel:‭+244 947 103 248‬" }],
   company: [
     { name: "geral@mavunzuka.co.ao", href: "mailto:geral@mavunzuka.co.ao" },
   ],
